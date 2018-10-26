@@ -1,5 +1,7 @@
+import { Member } from "./../adduser/member.model";
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -16,9 +18,25 @@ export class UnitService {
   };
 
   getAll() {
-    return this.httpClient.get(
-      `${this.API_URL}/unit/`,
-      this.httpOptions
+    return this.httpClient.get(`${this.API_URL}/unit/`, this.httpOptions);
+  }
+
+  getUnitBlocks() {
+    return this.httpClient.get(`${this.API_URL}/unit/blocks`, this.httpOptions);
+  }
+
+  getUnitFloors() {
+    return this.httpClient.get(`${this.API_URL}/unit/floors`, this.httpOptions);
+  }
+
+  addMember(memeber: Member) {
+    this.httpClient.post(`${this.API_URL}/member/`, memeber, this.httpOptions).subscribe(
+      data => {
+        console.log('POST Request is successful ', data);
+      },
+      error => {
+        console.log('Error', error);
+      }
     );
   }
 }

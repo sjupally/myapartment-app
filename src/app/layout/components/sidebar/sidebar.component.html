@@ -9,16 +9,16 @@
                 <i class="fa fa-fw fa-wrench"></i>&nbsp;
                 <span>{{ 'Units & User' | translate }}</span>
             </a>
-            <li routerLink="/user"  [routerLinkActive]="['router-link-active']" class="nested" [class.expand]="showMenu === 'pages'">
+            <li class="nested" [class.expand]="showMenu === 'pages'">
                 <ul class="submenu">
                     <li>
                         <a routerLink="/user"  [routerLinkActive]="['router-link-active']" >
                             <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Approved Users' | translate }}</span>
+                            <span>{{ 'Approved Units' | translate }}</span>
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)">
+                        <a routerLink="/addUser"  [routerLinkActive]="['router-link-active']">
                             <i class="fa fa-monument"></i>&nbsp;
                             <span>{{ 'Add User' | translate }}</span>
                         </a>

@@ -21,6 +21,9 @@
               "src/favicon.ico"
             ],
             "styles": [
+              "./node_modules/font-awesome/scss/font-awesome.scss",
+              "./node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
+              "./node_modules/angular-bootstrap-md/scss/mdb-free.scss",
               "./src/styles/app.scss"
             ],
             "scripts": [
@@ -38,12 +41,10 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }]
             }
           }
         },
