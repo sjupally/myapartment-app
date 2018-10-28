@@ -1,0 +1,103 @@
+<form class="text-center border border-light p-5" (ngSubmit)="onSubmit()" #f="ngForm">
+  <p class="h4 mb-4">Add User</p>
+  <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
+    <div class="form-row mb-4">
+      <div class="col">
+      </div>
+      <div class="col">
+        <!-- First name -->
+        <label for="firstName"></label>
+        <input type="text" id="firstName" class="form-control" placeholder="First name" ngModel name="firstName"
+          required>
+      </div>
+      <div class="col">
+        <!-- Last name -->
+        <label for="lastName"></label>
+        <input type="text" id="lastName" class="form-control" placeholder="Last name" ngModel name="lastName" required>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <div class="col">
+      </div>
+      <div class="col">
+        <!-- E-mail -->
+        <input type="email" id="email" class="form-control mb-4" placeholder="E-mail" ngModel name="email" required
+          email #email="ngModel">
+        <span class="help-block" *ngIf="!email.valid && email.touched">
+          <p>Please enter a valid email!</p>
+        </span>
+      </div>
+      <div class="col">
+        <!-- Phone number -->
+        <input type="text" id="contactNumber" class="form-control" placeholder="Phone number" ngModel name="contactNumber"
+          required>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <div class="col">
+      </div>
+      <div class="col">
+        <select class="form-control" ngModel name="selectedBlock" required #selectedBlock="ngModel">
+          <option value="Select Block">
+            Select Block
+          </option>
+          <option *ngFor="let block of blocks" [value]="block">
+            {{block}}
+          </option>
+        </select>
+      </div>
+      <div class="col">
+        <select class="form-control" ngModel name="selectedFloor" required #selectedFloor="ngModel">
+          <option value="Select Floor">
+            Select Floor
+          </option>
+          <option *ngFor="let floor of floors" [value]="floor">
+            {{floor}}
+          </option>
+        </select>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+
+    <div class="form-row mb-4">
+      <div class="col">
+      </div>
+      <div class="col">
+        <input type="text" id="intercomNo" class="form-control mb-4" placeholder="Intercom No" ngModel name="intercomNo"
+          required>
+      </div>
+      <div class="col">
+          <label *ngFor="let owner of owners">
+              <input
+                type="radio"
+                name="ownerShip"
+                ngModel
+                [value]="owner"
+                required>
+              {{ owner }}
+            </label>
+      </div>      
+      <div class="col">
+        </div>
+    </div>
+
+
+    <div class="form-row mb-4">
+      <div class="col">
+      </div>
+      <div class="col">
+        <button class="btn btn-info my-4 btn-block" type="submit" [disabled]="!f.valid">Submit</button>
+      </div>
+      <div class="col">
+
+      </div>
+    </div>
+  </div>
+</form>

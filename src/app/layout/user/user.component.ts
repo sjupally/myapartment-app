@@ -22,5 +22,5 @@ export class UserComponent implements OnInit {
     this.unitService.getAll().subscribe((res: any[]) => {
       this.units = res;
     });
-  }  
+  }
 }
