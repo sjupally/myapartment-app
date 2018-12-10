@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="col-md-12">
+        <div class="col-md-6 brd">
+            <div class="center-block">
+                <h2>Member Income</h2>
+                <br>
+                <a href="/memberIncome/#" (click)="getMemberIncome('2nd')"> 2nd </a>
+                &nbsp;&nbsp;
+                <a href="/memberIncome/#" (click)="getMemberIncome('3rd')"> 3rd </a>
+                &nbsp;&nbsp;
+                <a href="/memberIncome/#" (click)="getMemberIncome('4th')"> 4th </a>
+                &nbsp;&nbsp;
+                <a href="/memberIncome/#" (click)="getMemberIncome('5th')"> 5th </a>
+                &nbsp;&nbsp;
+                <a href="/memberIncome/#" (click)="getMemberIncome('6th')"> 6th </a>
+                &nbsp;&nbsp;
+                <a href="/memberIncome/#" (click)="getMemberIncome('7th')"> 7th </a>
+                &nbsp;&nbsp;
+                <a href="/memberIncome/#" (click)="getMemberIncome('8th')"> 8th </a>
+                &nbsp;&nbsp;
+                <a href="/memberIncome/#" (click)="getMemberIncome('9th')"> 9th </a>
+                &nbsp;&nbsp;
+                <a href="/memberIncome/#" (click)="getMemberIncome('10th')"> 10th </a>
+                &nbsp;&nbsp;
+                <a href="/memberIncome/#" (click)="getMemberIncome('10th')"> 10th </a>
+                &nbsp;&nbsp;
+                <a href="/memberIncome/#" (click)="getMemberIncome('12th')"> 12th </a>
+                &nbsp;&nbsp;
+                <a href="/memberIncome/#" (click)="getMemberIncome('13th')"> 13th </a>
+                &nbsp;&nbsp;
+                <a href="/memberIncome/#" (click)="getMemberIncome('14th')"> 14th </a>
+
+            </div>
+        </div>
+
+        <div class="card mb-3">
+            <div class="card-header">Residents under 10th</div>
+            <div class="card-body table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>Primary Contact</th>
+                        <th>Bill to Party</th>
+                        <th>Block</th>
+                        <th>Unit</th>
+                        <th>Status</th>
+                        <th>Due</th>
+                        <th>Account History</th>
+                        <th>Post Invoice</th>
+                        <th>Post Collection</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tbody>
+                    <tr *ngFor="let unit of units">
+                        <td>
+                            {{unit.billerName}}
+                        </td>
+                        <td>
+                            {{unit.billerName}}
+                        </td>
+                        <td>
+                            {{unit.floor}}
+                        </td>
+                        <td>
+                            {{unit.block}}
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

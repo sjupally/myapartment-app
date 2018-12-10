@@ -14,7 +14,7 @@ export class SidebarComponent {
     pushRightClass: string = 'push-right';
 
     @Output() collapsedEvent = new EventEmitter<boolean>();
-    
+
     constructor(private translate: TranslateService, public router: Router) {
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);
         this.translate.setDefaultLang('en');
