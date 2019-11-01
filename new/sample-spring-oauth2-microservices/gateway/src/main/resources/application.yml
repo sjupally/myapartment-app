@@ -1,0 +1,61 @@
+server:  
+  port: ${PORT:8765}
+
+spring:  
+  application:
+    name: gateway-server
+  datasource:
+    url: jdbc:sqlserver://SQL6427Dc\\CDEF:1099;databaseName=APP_GCCP_TRAINING;autoReconnect=true
+    username: APPID_DESKNET_AF
+    password: DeskNetAccess5
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+logging:
+  level:
+    org.springframework.cloud.netflix.zuul: TRACE
+      
+zuul:
+  routes:  
+    uaa:
+      path: /uaa/**
+      sensitiveHeaders:
+      serviceId: auth-server
+    account:
+      path: /**
+      sensitiveHeaders: 
+      serviceId: account-service
+      
+eureka:
+  client:
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+security:
+  user:
+    name: root
+    password: password
+  oauth2:
+    client:
+      accessTokenUri: http://localhost:8765/uua/oauth/token
+      userAuthorizationUri: http://localhost:8765/uua/oauth/authorize
+      clientAuthenticationScheme: form
+    resource:
+      userInfoUri: http://localhost:8765/uaa/user
+      preferTokenInfo: false  
+  sessions: ALWAYS 
+    
+#security:
+#  oauth2:
+#    sso:
+#      loginPath: /uaa/login      
+#    client:
+#      accessTokenUri: http://localhost:8765/uua/oauth/token
+#      userAuthorizationUri: http://localhost:8765/uua/oauth/authorize
+#      clientId: acme
+#      clientSecret: secret
+#      clientAuthenticationScheme: form   
+#    resource:
+#      userInfoUri: http://localhost:9999/user
+#      preferTokenInfo: false  
+#  sessions: ALWAYS 

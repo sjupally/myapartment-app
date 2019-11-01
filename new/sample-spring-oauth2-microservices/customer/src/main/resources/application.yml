@@ -1,0 +1,19 @@
+server:  
+  port: ${PORT:8083}
+
+spring:  
+  application:
+    name: customer-service
+      
+security:
+  user:
+    password: none
+  oauth2:
+    client:
+      client-id: customer-service
+      client-secret: secret
+      scope: read
+      access-token-uri: http://localhost:9999/oauth/token
+      user-authorization-uri: http://localhost:9999/oauth/authorize
+    resource:
+      token-info-uri: http://localhost:9999/oauth/check_token

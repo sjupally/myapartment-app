@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="discovery" />
+        <module name="account" />
+        <module name="gateway" />
+        <module name="customer" />
+        <module name="auth" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="account" target="1.8" />
+      <module name="auth" target="1.8" />
+      <module name="customer" target="1.8" />
+      <module name="discovery" target="1.8" />
+      <module name="gateway" target="1.8" />
+      <module name="sample-spring-oauth2-microservices" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="account" options="" />
+      <module name="auth" options="" />
+      <module name="customer" options="" />
+      <module name="discovery" options="" />
+      <module name="gateway" options="" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,19 @@
+server:  
+  port: ${PORT:9999}
+
+spring:  
+  application:
+    name: auth-server
+  datasource:
+    url: jdbc:sqlserver://SQL6427Dc\\CDEF:1099;databaseName=APP_GCCP_TRAINING;autoReconnect=true
+    username: APPID_DESKNET_AF
+    password: DeskNetAccess5
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: none
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+
+logging:
+  level:
+    org.springframework.security: DEBUG
